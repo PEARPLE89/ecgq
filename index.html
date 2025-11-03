@@ -1,53 +1,75 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Élan Citoyen Grand Quevillais - ECGQ</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ECGQ – Élan Citoyen Grand Quevillais</title>
+  <!-- Polices de secours (remplaçables par Zalando Sans auto-hébergée) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="Collectif citoyen du Grand-Quevilly. Actualités, évènements, candidats, contact." />
 </head>
 <body>
-  <header>
-    <h1>Élan Citoyen Grand Quevillais</h1>
-    <nav>
-      <a href="#actu">Actualités</a>
-      <a href="#evenements">Événements</a>
+  <header class="site-header">
+    <div class="brand">
+      <img src="assets/logoecgq.jpg" alt="Logo ECGQ" class="logo" />
+      <div class="brand-text">
+        <span class="brand-top">Élan Citoyen</span>
+        <span class="brand-bottom">Grand Quevillais</span>
+      </div>
+    </div>
+    <nav class="nav">
+      <a href="#actus">Actualités</a>
+      <a href="#evenements">Évènements</a>
       <a href="#candidats">Candidats</a>
-      <a href="#forum">Forum (à venir)</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <main>
-    <section id="intro">
-      <h2>Bienvenue sur le site test ECGQ</h2>
-      <p>Ce site est une version de démonstration hébergée sur GitHub Pages, avant le déploiement officiel sur <strong>ecgq.fr</strong>.</p>
-    </section>
+  <!-- Hero avec 4 bandes montantes de la charte -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1><em>Ensemble</em> pour Grand-Quevilly</h1>
+      <p class="subtitle">Participation – Écoute – Proximité</p>
+      <p class="mention">Élections municipales – 15 et 22 mars 2026</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#actus">Voir les actualités</a>
+        <a class="btn btn-outline" href="#evenements">Nos évènements</a>
+      </div>
+    </div>
+    <div class="bands" aria-hidden="true"></div>
+  </section>
 
-    <section id="actu">
+  <main class="container">
+    <section id="actus" class="block">
       <h2>Actualités</h2>
-      <article>
-        <h3>Lancement du collectif ECGQ</h3>
-        <p>Notre collectif citoyen s’organise pour les municipales de 2026 avec un objectif : redonner la parole aux habitants de Grand-Quevilly.</p>
+      <article class="card">
+        <h3>Lancement d’ECGQ</h3>
+        <p>Notre collectif citoyen s’organise pour faire participer les habitant·es et améliorer le quotidien à Grand-Quevilly.</p>
       </article>
     </section>
 
-    <section id="evenements">
-      <h2>Prochains événements</h2>
-      <ul>
-        <li>📅 Réunion publique - décembre 2025</li>
-        <li>📅 Atelier participatif - janvier 2026</li>
+    <section id="evenements" class="block">
+      <h2>Évènements</h2>
+      <ul class="events">
+        <li>📅 Réunion publique – décembre 2025</li>
+        <li>📅 Atelier participatif – janvier 2026</li>
       </ul>
     </section>
 
-    <section id="contact">
+    <section id="candidats" class="block">
+      <h2>Candidats</h2>
+      <p>La liste avec photos et mini-bios sera publiée ici.</p>
+    </section>
+
+    <section id="contact" class="block">
       <h2>Contact</h2>
       <p>📧 ecgq76120@protonmail.com</p>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 Élan Citoyen Grand Quevillais - Tous droits réservés.</p>
+  <footer class="site-footer">
+    <p>© 2025 ECGQ — Élan Citoyen Grand Quevillais</p>
   </footer>
 </body>
 </html>

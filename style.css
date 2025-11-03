@@ -1,47 +1,180 @@
+/* ====== Import des polices Zalando Sans ====== */
+
+/* Corps de texte */
+@font-face {
+  font-family: "ZalandoSans";
+  src: url("fonts/CORPS DE TEXTE/ZalandoSans_SemiCondensed-Medium.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ZalandoSans";
+  src: url("fonts/CORPS DE TEXTE/ZalandoSans_SemiCondensed-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Sous-titres */
+@font-face {
+  font-family: "ZalandoSans";
+  src: url("fonts/SOUS TITRES/ZalandoSans_Expanded-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: "ZalandoSans";
+  src: url("fonts/SOUS TITRES/ZalandoSans_Expanded-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Titres */
+@font-face {
+  font-family: "ZalandoSans";
+  src: url("fonts/TITRES/ZalandoSans_Expanded-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ZalandoSans";
+  src: url("fonts/TITRES/ZalandoSans_Expanded-BlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* ====== Design tokens (charte) ====== */
+:root {
+  --violet: #7B13D6;
+  --vert: #43AC59;
+  --jaune: #FFC700;
+  --rouge: #F91616;
+
+  --violet-imp: #58398D;
+  --vert-imp: #37BC53;
+  --jaune-imp: #FCC029;
+  --rouge-imp: #DA3832;
+
+  --bg: #f7f7f9;
+  --ink: #1b1b1b;
+  --muted: #6b7280;
+  --radius: 16px;
+  --shadow: 0 10px 24px rgba(0,0,0,.08);
+}
+
+/* ====== Base ====== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 body {
-  font-family: "Marianne", Arial, sans-serif;
-  margin: 0;
-  background: #f8f9fa;
-  color: #222;
+  font-family: "ZalandoSans", Arial, sans-serif;
+  font-weight: 400;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
 }
-
-header {
-  background: #004080;
-  color: white;
-  padding: 1.2em;
-  text-align: center;
+h1, h2, h3 {
+  font-family: "ZalandoSans", Arial, sans-serif;
+  letter-spacing: 0.2px;
+  margin: 0 0 .6rem 0;
 }
+h1 { font-weight: 900; }
+h2 { font-weight: 800; border-bottom: 4px solid var(--vert); display:inline-block; padding:0 .2rem .2rem .2rem; }
+h3 { font-weight: 700; }
 
-header h1 {
-  margin: 0.2em 0;
+/* ====== Header ====== */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 20px;
+  background: var(--violet);
+  color: #fff;
 }
+.brand { display: flex; align-items: center; gap: 12px; }
+.logo { height: 50px; width: auto; display: block; }
+.brand-text { line-height: 1; }
+.brand-top { font-weight: 800; text-transform: uppercase; font-size: 1.1rem; }
+.brand-bottom { font-weight: 900; font-size: 1.05rem; }
 
-nav a {
-  color: white;
+.nav a {
+  color: #fff;
   text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
+  font-weight: 700;
+  margin-left: 18px;
+}
+.nav a:hover { text-decoration: underline; opacity: .9; }
+
+/* ====== Hero ====== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background: var(--violet);
+}
+.hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 60px 20px 80px;
+}
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+}
+.hero h1 em { font-style: italic; }
+.hero .subtitle { margin: .4rem 0 1rem 0; font-weight: 700; opacity: .95; }
+.hero .mention { font-size: .95rem; opacity: .9; }
+.cta-row { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 2px solid transparent;
+  box-shadow: var(--shadow);
+  transition: transform .06s ease, opacity .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn-primary { background: var(--vert); color: #fff; }
+.btn-outline { background: #fff; color: var(--violet); border-color: #fff; }
+
+.bands {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  transform: skewY(-3deg) translateY(18%);
+  background:
+    linear-gradient(to right, var(--vert) 0 25%, transparent 25%) 0 60% / 100% 20% no-repeat,
+    linear-gradient(to right, var(--jaune) 0 25%, transparent 25%) 0 72% / 100% 20% no-repeat,
+    linear-gradient(to right, var(--rouge) 0 25%, transparent 25%) 0 84% / 100% 20% no-repeat;
+  opacity: .9;
 }
 
-nav a:hover {
-  text-decoration: underline;
+/* ====== Sections ====== */
+.container { max-width: 1000px; margin: 0 auto; padding: 28px 20px; }
+.block { margin: 28px 0; }
+.card {
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
 }
+.events { padding-left: 1.2rem; }
+.events li { margin: .25rem 0; }
 
-main {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
-}
-
-h2 {
-  border-bottom: 3px solid #004080;
-  padding-bottom: 5px;
-}
-
-footer {
-  background: #222;
-  color: white;
+/* ====== Footer ====== */
+.site-footer {
+  background: #111;
+  color: #eee;
   text-align: center;
-  padding: 1em;
+  padding: 18px;
   margin-top: 40px;
+}
+
+/* ====== Responsif ====== */
+@media (max-width: 800px) {
+  .nav a { margin-left: 12px; }
+  .brand-bottom { font-size: 1rem; }
 }
