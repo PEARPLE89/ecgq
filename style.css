@@ -182,7 +182,8 @@ h3 { font-weight: 700; }
 .communique-img {
   display: block;
   width: 100%;
-  max-width: 800px;
+  max-width: 600px;  /* <-- limite la largeur */
+  height: auto;
   margin: 20px auto;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
